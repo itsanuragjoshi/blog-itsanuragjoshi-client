@@ -1,0 +1,26 @@
+.switchButton {
+  outline: 1px solid var(--color-tone-1);
+  background-color: var(--color-switch);
+  border: none;
+  height: 18px;
+  --switch-btn-width: 36px;
+  width: var(--switch-btn-width);
+  cursor: pointer;
+  position: relative;
+}
+
+.switchButton .switchKnob {
+  background-color: var(--color-switch-knob);
+  height: 16px;
+  --switch-knob-width: 16px;
+  width: var(--switch-knob-width);
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: left 0.3s ease;
+}
+
+.switchButton.toggle .switchKnob {
+  top: 1px;
+  left: calc(var(--switch-btn-width) - var(--switch-knob-width) - 1px);
+}

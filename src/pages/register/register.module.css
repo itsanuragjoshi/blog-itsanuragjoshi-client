@@ -1,0 +1,38 @@
+.formContainer {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.formContainer .formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.formContainer .formGroup:focus-within input {
+  border-color: var(--color-border-dark);
+}
+
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formContainer input {
+  border: 1px solid var(--color-border-light);
+  transition: border-color 0.3s;
+  height: 40px;
+  padding: 10px;
+}
+
+.formContainer img {
+  border: 1px solid var(--color-border-dark);
+  width: 100%;
+}
+
+.formContainer button {
+  min-width: 120px;
+}

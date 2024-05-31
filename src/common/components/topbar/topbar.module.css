@@ -1,0 +1,42 @@
+.topbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 54px;
+  gap: 30px;
+  background-color: var(--color-background);
+  width: inherit;
+}
+
+.logoWrapper {
+  height: inherit;
+  display: flex;
+}
+
+.logo {
+  height: 100%;
+}
+
+.menuIcon,
+.closeIcon {
+  height: 24px;
+}
+
+.menuIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
+@media screen and (min-width: 1024px) {
+  .topbar {
+    height: 60px;
+  }
+
+  .menuIconWrapper {
+    display: none;
+  }
+}

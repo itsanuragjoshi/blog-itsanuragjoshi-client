@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Build directories
+build/
+dist/
+
+# Cache directories
+.cache/
+.eslintcache/
+
+# Configuration files
+.env
+
+# Miscellaneous
+.DS_Store
+.vscode/
+.idea/
+*.local

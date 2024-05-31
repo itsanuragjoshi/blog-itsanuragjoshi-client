@@ -1,0 +1,7 @@
+.mainFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--color-border-light);
+  padding: 20px;
+}

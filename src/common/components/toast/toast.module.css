@@ -1,0 +1,18 @@
+.toast {
+  visibility: hidden;
+  min-width: 300px;
+  background-color: var(--color-background-reverse);
+  color: var(--color-font-reverse);
+  padding: 10px;
+  position: fixed;
+  z-index: 299;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}

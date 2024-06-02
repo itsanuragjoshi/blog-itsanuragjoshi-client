@@ -28,7 +28,7 @@ const Dashboard = lazy(() => import("pages/dashboard/dashboard"));
 const App = () => {
   const { theme } = useThemeContext(); // Custom hook to get theme
   const { isAuthenticated } = useAuthContext(); // Custom hook to get authentication status
-  const { toastMessage } = useToastContext(); // Custom hook to fetch and show toast notification
+  const { toastList } = useToastContext(); // Custom hook to fetch and show toast notification
 
   // Render App component
   return (
@@ -38,7 +38,8 @@ const App = () => {
         <Header />
 
         {/* Toast Notification component */}
-        {toastMessage ? <Toast toastMessage={toastMessage} /> : null}
+        <Toast toastList={toastList} />
+        {/* {toastList ? <Toast toastList={toastList} /> : null} */}
 
         {/* Suspense for lazy-loaded components with loading fallback */}
         <Suspense fallback={<Loader />}>

@@ -43,9 +43,8 @@ const useFetchPosts = (apiUrl, accessToken = "") => {
 
         // Set total count of posts
         setTotalPostCount(response.data.length);
-        showToast("post count fetched");
       } catch (error) {
-        showToast(error.response?.data.error || "Internal Server Error");
+        showToast(error.response?.data.error || "Error! Unable to fetch post count from server");
       }
     };
 
@@ -84,9 +83,8 @@ const useFetchPosts = (apiUrl, accessToken = "") => {
 
         // Update visibility count with fetched data
         setVisiblePostCount((prev) => prev + response.data.length);
-        showToast("post fetched");
       } catch (error) {
-        showToast(error.response?.data.error || "Internal Server Error");
+        showToast(error.response?.data.error || "Error! Unable to fetch posts from server");
       }
     };
 

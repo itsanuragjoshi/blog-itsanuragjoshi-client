@@ -35,7 +35,7 @@ const useFetchPost = (postId) => {
         // Set isPostFetched to true once data is successfully fetched
         setIsPostFetched(true);
       } catch (error) {
-        showToast(error.response?.data.error || "Internal Server Error");
+        showToast(error.response?.data.error || "Error! Unable to fetch post from server");
       }
     };
 

@@ -25,7 +25,7 @@ const useFetchPostAuthor = (postAuthorId) => {
         }
       } catch (error) {
         // Handle errors if unable to fetch author data
-        console.error("Error! Unable to fetch author data from the server");
+        console.error("Error! Unable to fetch author data from server");
       }
     };
     fetchPostAuthor();

@@ -1,18 +1,46 @@
+.toastContainer {
+  position: fixed;
+  z-index: 299;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between toasts */
+}
+
 .toast {
   visibility: hidden;
   min-width: 300px;
   background-color: var(--color-background-reverse);
   color: var(--color-font-reverse);
   padding: 10px;
-  position: fixed;
-  z-index: 299;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
   font-weight: bold;
+  transition: visibility 0.5s, transform 0.5s;
+  transform: translateY(-20px); /* Initial position for animation */
 }
 
 .toast.show {
   visibility: visible;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  transform: translateY(0); /* Final position for animation */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

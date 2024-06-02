@@ -1,5 +1,5 @@
 // Import dependencies
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 
 // Create a context for managing toast notifications
 const ToastContext = createContext(null);
@@ -7,25 +7,28 @@ const ToastContext = createContext(null);
 // ToastProvider component to wrap application and provide toast functionality
 export const ToastProvider = ({ children }) => {
   // State to manage current toast message
-  const [toastMessage, setToastMessage] = useState("");
-  let timeoutId;
+  const [toastList, setToastList] = useState([]);
 
   // Function to show a toast message and automatically hide it after a timeout
-  const showToast = (message) => {
-    console.log("message", message);
-    setToastMessage(message);
+  const showToast = useCallback((message) => {
+    const id = Date.now(); // Unique ID for each toast message
+    const newToast = { id, message };
 
-    // Clear previous timeout, if any
-    clearTimeout(timeoutId);
-    // Set a timeout to clear toast message after a specified duration
-    timeoutId = setTimeout(() => {
-      setToastMessage("");
+    // Add new toast message to the state
+    setToastList((prevList) => [...prevList, newToast]);
+
+    // Set a timeout to remove the toast message after a specified duration
+    const timeoutId = setTimeout(() => {
+      setToastList((prevList) => prevList.filter((toast) => toast.id !== id));
     }, 2500); // Adjust timeout duration as needed
-  };
+
+    // Return a function to clear the timeout if needed
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   // Provide toast-related state and functions to context
   return (
-    <ToastContext.Provider value={{ toastMessage, showToast }}>
+    <ToastContext.Provider value={{ toastList, showToast }}>
       {children}
     </ToastContext.Provider>
   );

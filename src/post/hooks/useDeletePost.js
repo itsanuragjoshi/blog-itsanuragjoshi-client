@@ -44,10 +44,10 @@ const useDeletePost = (postId, accessToken) => {
 
         // Set isPostDeleted to true once post data is successfully deleted
         setIsPostDeleted(true);
-        
+
         // Display success message as a toast
-        showToast(response?.data.success);
-        
+        showToast(response?.data.success || "Success! Your post has been deleted");
+
         // Navigate to dashboard
         navigate("/dashboard");
 

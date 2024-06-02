@@ -149,14 +149,12 @@ const Draft = () => {
       );
 
       // Display success message as a toast
-      showToast(response?.data.success);
-      console.log(response?.data.success);
+      showToast(response?.data.success || "Success! Your post has been published");
 
       // Navigate to dashboard
       navigate("/dashboard");
     } catch (error) {
-      showToast(error.response?.data.error || "Internal Server Error");
-      console.error(error.response?.data.error || "Internal Server Error");
+      showToast(error.response?.data.error || "Error! Unable to publish your post" );
     }
   };
 

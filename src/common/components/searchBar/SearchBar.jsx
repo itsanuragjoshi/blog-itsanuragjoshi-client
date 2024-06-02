@@ -19,7 +19,7 @@ const SearchBar = () => {
     try {
       if (searchTerm) {
         // Redirect to search page with encoded search query
-        window.location.href = `/blog/search?q=${encodeURIComponent(
+        window.location.href = `/search?q=${encodeURIComponent(
           searchTerm
         )}`;
         setSearchTerm(""); // Clear the searchTerm state

@@ -143,6 +143,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .button:disabled {

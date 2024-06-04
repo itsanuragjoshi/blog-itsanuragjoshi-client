@@ -126,7 +126,7 @@ h3 {
   font-size: 1.25rem;
 }
 
-::placeholder {
+::placeholder, input {
   color: var(--color-font);
 }
 

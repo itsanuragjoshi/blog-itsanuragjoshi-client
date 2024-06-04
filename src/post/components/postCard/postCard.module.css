@@ -29,8 +29,7 @@ article.postCard {
 }
 
 .postDescription {
-  padding-top: 10px;
-  border-top: 1px solid var(--color-border-light);
+  display: none;
 }
 
 .postInfo {
@@ -43,4 +42,11 @@ article.postCard {
 .postTitle a {
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+@media screen and (min-width: 1024px) {
+  .postDescription {
+    padding-top: 10px;
+    border-top: 1px solid var(--color-border-light);
+  }
 }

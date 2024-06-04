@@ -8,7 +8,7 @@ import useFetchPosts from "post/hooks/useFetchPosts";
 import PostCard from "post/components/postCard/PostCard";
 
 // Import assets
-import SuperAdmin from "assets/anuragjoshi.png";
+import SuperAdmin from "assets/itsanuragjoshi.webp";
 
 // Define Home component
 const Home = () => {

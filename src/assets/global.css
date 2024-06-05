@@ -57,6 +57,7 @@ button {
   background: none;
   white-space: nowrap;
   color: var(--color-font);
+  cursor: pointer;
 }
 
 .dNone,

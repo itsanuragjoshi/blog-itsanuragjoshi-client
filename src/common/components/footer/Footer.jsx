@@ -16,7 +16,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          ANURAG JOSHI
+          Anurag Joshi
         </a>
       </pre>
     </footer>

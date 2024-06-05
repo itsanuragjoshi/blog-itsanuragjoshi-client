@@ -73,6 +73,10 @@
     flex-direction: row;
   }
 
+  .heroContentWrapper p {
+    font-size: 1.5rem;
+  }
+
   .articles {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;

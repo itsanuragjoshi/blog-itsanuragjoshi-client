@@ -175,6 +175,8 @@ h3 {
   .container {
     padding: 20px 96px;
     gap: 40px;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   h1 {

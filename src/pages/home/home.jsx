@@ -33,26 +33,28 @@ const Home = () => {
       />
       <main className="home">
         <div className={styles.heroSection}>
-          <div className={styles.heroHeader}>
-            {/* Title for hero section */}
-            <h1>Words that could not make it to my code</h1>
-          </div>
-
-          {/* Author information in hero section */}
-          <div className={styles.heroAuthorBlock}>
-            <div className={styles.heroImageWrapper}>
-              {/* Author image */}
-              <img src={SuperAdmin} alt="This is Anurag Joshi" />
+          <div className="container">
+            <div className={styles.heroHeader}>
+              {/* Title for hero section */}
+              <h1>Words that could not make it to my code</h1>
             </div>
 
-            <div className={styles.heroContentWrapper}>
-              {/* Author greeting and introduction */}
-              <h3>hey there!</h3>
-              <p>
-                Welcome to my blog. I'm Anurag Joshi, a Digital marketer turned
-                aspiring front-end engineer, on a coding journey with a passion
-                for JavaScript and ReactJS
-              </p>
+            {/* Author information in hero section */}
+            <div className={styles.heroAuthorBlock}>
+              <div className={styles.heroImageWrapper}>
+                {/* Author image */}
+                <img src={SuperAdmin} alt="This is Anurag Joshi" />
+              </div>
+
+              <div className={styles.heroContentWrapper}>
+                {/* Author greeting and introduction */}
+                <h3>hey there!</h3>
+                <p>
+                  Welcome to my blog. I'm Anurag Joshi, a Digital marketer turned
+                  aspiring front-end engineer, on a coding journey with a passion
+                  for JavaScript and ReactJS
+                </p>
+              </div>
             </div>
           </div>
         </div>

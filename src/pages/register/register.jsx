@@ -6,11 +6,13 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-// Import hooks
+// Import components
 import Loader from "common/components/loader/Loader";
+import MetaTags from "common/components/metaTags/MetaTags";
 
 // Import assets
 import RegisterImage from "assets/registerImage.webp";
+
 
 // Define Register component
 const Register = () => {
@@ -58,7 +60,7 @@ const Register = () => {
       // Handle and set error message if registration fails
       setErrorMessage(
         error.response?.data.error ||
-          "Oops! Registration failed. Please try again."
+        "Oops! Registration failed. Please try again."
       );
     } finally {
       // Set loading back to false after API request completes
@@ -68,68 +70,74 @@ const Register = () => {
 
   // Render Register component
   return (
-    <main className="register">
-      <div className="container">
-        <div className={styles.formContainer}>
-          {/* Title and meme image */}
-          <h2>Author Registration</h2>
-          <img src={RegisterImage} alt="You Shall Not Pass Meme" />
+    <>
+      <MetaTags
+        title="Register | Anurag Joshi's Blog"
+        description="Register | Anurag Joshi's Blog"
+      />
+      <main className="register">
+        <div className="container">
+          <div className={styles.formContainer}>
+            {/* Title and meme image */}
+            <h2>Author Registration</h2>
+            <img src={RegisterImage} alt="You Shall Not Pass Meme" />
 
-          {/* Registration form */}
-          <form id="registerForm" onSubmit={handleSubmit}>
-            {/* Email input field */}
-            <div className={styles.formGroup}>
-              <label htmlFor="userEmail">Email</label>
-              <input
-                type="email"
-                id="userEmail"
-                ref={userRef}
-                onChange={(e) => setUserEmail(e.target.value)}
-                value={userEmail}
-                autoComplete="off"
-                required
-              />
-            </div>
+            {/* Registration form */}
+            <form id="registerForm" onSubmit={handleSubmit}>
+              {/* Email input field */}
+              <div className={styles.formGroup}>
+                <label htmlFor="userEmail">Email</label>
+                <input
+                  type="email"
+                  id="userEmail"
+                  ref={userRef}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  value={userEmail}
+                  autoComplete="off"
+                  required
+                />
+              </div>
 
-            {/* Password input field */}
-            <div className={styles.formGroup}>
-              <label htmlFor="userPassword">Password</label>
-              <input
-                type="password"
-                id="userPassword"
-                onChange={(e) => setUserPassword(e.target.value)}
-                value={userPassword}
-                required
-              />
-            </div>
+              {/* Password input field */}
+              <div className={styles.formGroup}>
+                <label htmlFor="userPassword">Password</label>
+                <input
+                  type="password"
+                  id="userPassword"
+                  onChange={(e) => setUserPassword(e.target.value)}
+                  value={userPassword}
+                  required
+                />
+              </div>
 
-            {/* Full name input field */}
-            <div className={styles.formGroup}>
-              <label htmlFor="userName">Full Name</label>
-              <input
-                type="text"
-                id="userName"
-                onChange={(e) => setUserName(e.target.value)}
-                value={userName}
-                required
-              />
-            </div>
+              {/* Full name input field */}
+              <div className={styles.formGroup}>
+                <label htmlFor="userName">Full Name</label>
+                <input
+                  type="text"
+                  id="userName"
+                  onChange={(e) => setUserName(e.target.value)}
+                  value={userName}
+                  required
+                />
+              </div>
 
-            {/* Display error message if there is one */}
-            {errorMessage && <div className="error">{errorMessage}</div>}
+              {/* Display error message if there is one */}
+              {errorMessage && <div className="error">{errorMessage}</div>}
 
-            {/* Registration button with loading indicator */}
-            <button
-              onClick={handleSubmit}
-              className="button buttonPrimary"
-              disabled={loading}
-            >
-              {loading ? <Loader /> : "Register"}
-            </button>
-          </form>
+              {/* Registration button with loading indicator */}
+              <button
+                onClick={handleSubmit}
+                className="button buttonPrimary"
+                disabled={loading}
+              >
+                {loading ? <Loader /> : "Register"}
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 

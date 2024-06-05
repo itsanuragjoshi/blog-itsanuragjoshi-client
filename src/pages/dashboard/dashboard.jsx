@@ -7,6 +7,7 @@ import useFetchPosts from "post/hooks/useFetchPosts";
 
 // Import components
 import PostList from "post/components/postList/PostList";
+import MetaTags from "common/components/metaTags/MetaTags";
 
 // Define Dashboard component
 const Dashboard = () => {
@@ -27,49 +28,55 @@ const Dashboard = () => {
 
   // Render Dashboard component
   return (
-    <main className="dashboard">
-      <div className={styles.heroSection}>
-        <div className={styles.heroHeader}>
-          {/* Title for hero section */}
-          <h1>Welcome, {authenticatedUser.userName}</h1>
-        </div>
-      </div>
-
-      {/* Main content container */}
-      <div className="container">
-        <div className={styles.blockTitle}>
-          {/* Title for  latest articles section */}
-          <h2 className="title">Published Articles</h2>
-
-          {/* Information about total number of latest articles */}
-          <div className="actions">
-            <div className="info">
-              {totalPostCount === 1
-                ? `${totalPostCount} article`
-                : `${totalPostCount} articles`}
-            </div>
+    <>
+      <MetaTags
+        title="Dashboard | Anurag Joshi's Blog"
+        description="Dashboard | Anurag Joshi's Blog"
+      />
+      <main className="dashboard">
+        <div className={styles.heroSection}>
+          <div className={styles.heroHeader}>
+            {/* Title for hero section */}
+            <h1>Welcome, {authenticatedUser.userName}</h1>
           </div>
         </div>
 
-        {/* Render individual PostList components for each post */}
-        <div className={styles.articles}>
-          {isPostsFetched
-            ? posts.map((post) => <PostList post={post} key={post._id} />)
-            : null}
-        </div>
+        {/* Main content container */}
+        <div className="container">
+          <div className={styles.blockTitle}>
+            {/* Title for  latest articles section */}
+            <h2 className="title">Published Articles</h2>
 
-        {/* Load More button or message when there are no more posts to load */}
-        <div className={styles.loadMore}>
-          {totalPostCount > 0 ? (
-            visiblePostCount < totalPostCount ? (
-              <button onClick={handleOnLoadMore}>See More Posts &rarr;</button>
-            ) : (
-              <div>Sorry, that's all folks! No more to load.</div>
-            )
-          ) : null}
+            {/* Information about total number of latest articles */}
+            <div className="actions">
+              <div className="info">
+                {totalPostCount === 1
+                  ? `${totalPostCount} article`
+                  : `${totalPostCount} articles`}
+              </div>
+            </div>
+          </div>
+
+          {/* Render individual PostList components for each post */}
+          <div className={styles.articles}>
+            {isPostsFetched
+              ? posts.map((post) => <PostList post={post} key={post._id} />)
+              : null}
+          </div>
+
+          {/* Load More button or message when there are no more posts to load */}
+          <div className={styles.loadMore}>
+            {totalPostCount > 0 ? (
+              visiblePostCount < totalPostCount ? (
+                <button onClick={handleOnLoadMore}>See More Posts &rarr;</button>
+              ) : (
+                <div>Sorry, that's all folks! No more to load.</div>
+              )
+            ) : null}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 

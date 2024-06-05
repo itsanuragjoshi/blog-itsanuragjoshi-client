@@ -6,6 +6,7 @@ import PostDetail from "post/components/postDetail/PostDetail";
 
 // Import hooks
 import useFetchPost from "post/hooks/useFetchPost";
+import MetaTags from "common/components/metaTags/MetaTags";
 
 // Define Detail component
 const Detail = () => {
@@ -18,12 +19,15 @@ const Detail = () => {
 
   // Render Detail component
   return (
-    <main className="detail">
-      <div className="container">
-        {/* Render PostDetail component if data has been fetched */}
-        {isPostFetched ? <PostDetail post={post} /> : null}
-      </div>
-    </main>
+    <>
+      <MetaTags title={post.postPreviewTitle} description={post.postPreviewDescription} />
+      <main className="detail">
+        <div className="container">
+          {/* Render PostDetail component if data has been fetched */}
+          {isPostFetched ? <PostDetail post={post} /> : null}
+        </div>
+      </main>
+    </>
   );
 };
 

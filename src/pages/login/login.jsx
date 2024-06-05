@@ -8,7 +8,10 @@ import axios from "axios";
 
 // Import hooks
 import useAuthContext from "common/hooks/useAuthContext";
+
+// Import components
 import Loader from "common/components/loader/Loader";
+import MetaTags from "common/components/metaTags/MetaTags";
 
 // Import assets
 import LoginImage from "assets/loginImage.webp";
@@ -82,56 +85,62 @@ const Login = () => {
 
   // Render Login component
   return (
-    <main className="login">
-      <div className="container">
-        <div className={styles.formContainer}>
-          {/* Title and meme image */}
-          <h2>Where Only Authors Shall Pass</h2>
-          <img src={LoginImage} alt="You Shall Not Pass Meme" />
+    <>
+      <MetaTags
+        title="Login | Anurag Joshi's Blog"
+        description="Login | Anurag Joshi's Blog"
+      />
+      <main className="login">
+        <div className="container">
+          <div className={styles.formContainer}>
+            {/* Title and meme image */}
+            <h2>Where Only Authors Shall Pass</h2>
+            <img src={LoginImage} alt="You Shall Not Pass Meme" />
 
-          {/* Login form */}
-          <form id="loginForm" onSubmit={handleSubmit}>
-            {/* Email input field */}
-            <div className={styles.formGroup}>
-              <label htmlFor="userEmail">Email</label>
-              <input
-                type="email"
-                id="userEmail"
-                ref={userRef}
-                onChange={(e) => setUserEmail(e.target.value)}
-                value={userEmail}
-                autoComplete="off"
-                required
-              />
-            </div>
+            {/* Login form */}
+            <form id="loginForm" onSubmit={handleSubmit}>
+              {/* Email input field */}
+              <div className={styles.formGroup}>
+                <label htmlFor="userEmail">Email</label>
+                <input
+                  type="email"
+                  id="userEmail"
+                  ref={userRef}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  value={userEmail}
+                  autoComplete="off"
+                  required
+                />
+              </div>
 
-            {/* Password input field */}
-            <div className={styles.formGroup}>
-              <label htmlFor="userPassword">Password</label>
-              <input
-                type="password"
-                id="userPassword"
-                onChange={(e) => setUserPassword(e.target.value)}
-                value={userPassword}
-                required
-              />
-            </div>
+              {/* Password input field */}
+              <div className={styles.formGroup}>
+                <label htmlFor="userPassword">Password</label>
+                <input
+                  type="password"
+                  id="userPassword"
+                  onChange={(e) => setUserPassword(e.target.value)}
+                  value={userPassword}
+                  required
+                />
+              </div>
 
-            {/* Display error message if there is one */}
-            {errorMessage && <div className="error">{errorMessage}</div>}
+              {/* Display error message if there is one */}
+              {errorMessage && <div className="error">{errorMessage}</div>}
 
-            {/* Login button with loading indicator */}
-            <button
-              onClick={handleSubmit}
-              className="button buttonPrimary"
-              disabled={loading}
-            >
-              {loading ? <Loader /> : "Log In"}
-            </button>
-          </form>
+              {/* Login button with loading indicator */}
+              <button
+                onClick={handleSubmit}
+                className="button buttonPrimary"
+                disabled={loading}
+              >
+                {loading ? <Loader /> : "Log In"}
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 

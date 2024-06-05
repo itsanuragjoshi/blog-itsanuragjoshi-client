@@ -46,6 +46,7 @@ article.postCard {
 
 @media screen and (min-width: 1024px) {
   .postDescription {
+    display: block;
     padding-top: 10px;
     border-top: 1px solid var(--color-border-light);
   }

@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className={styles.mainFooter}>
       <pre>
         <span>© {currentYear}, </span>
-        <span>Developed with 🖤 by </span>
+        <span>Developed with ❤️ by </span>
         <a
           href="https://github.com/itsanuragjoshi/"
           target="_blank"

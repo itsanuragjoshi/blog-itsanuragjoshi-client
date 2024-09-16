@@ -49,10 +49,14 @@ const Menu = ({ showMobileMenu }) => {
           <LogoutButton />
         </>
       ) : (
-        <Link to={"/login"}>
-          {/* Login button */}
-          <LoginButton />
-        </Link>
+        <>
+          {/* Link to about page */}
+          <Link to={"/about"}>About</Link>
+          <Link to={"/login"}>
+            {/* Login button */}
+            <LoginButton />
+          </Link>
+        </>
       )}
     </nav>
   );

@@ -18,6 +18,7 @@ import { HelmetProvider } from "react-helmet-async";
 
 // Import pages
 const Home = lazy(() => import("pages/home/home"));
+const About = lazy(() => import("pages/about/about"));
 const Draft = lazy(() => import("pages/draft/draft"));
 const Edit = lazy(() => import("pages/edit/edit"));
 const Detail = lazy(() => import("pages/detail/detail"));
@@ -53,6 +54,9 @@ const App = () => {
               {/* PUBLIC ROUTES (NO AUTHENTICATION REQUIRED) */}
               {/* Home route */}
               <Route path="/" element={<Home />} />
+
+              {/* About route */}
+              <Route path="/about" element={<About />} />
 
               {/* Detail route */}
               <Route path="/:id" element={<Detail />} />

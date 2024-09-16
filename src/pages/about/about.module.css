@@ -1,0 +1,35 @@
+.about {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contentWrapper p {
+  line-height: auto;
+}
+
+.imageWrapper {
+  max-width: 200px;
+  aspect-ratio: 1/1;
+}
+
+.imageWrapper img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.links {
+  text-decoration: underline;
+  display: flex;
+  gap: 20px;
+  color: red;
+  font-weight: bold;
+}

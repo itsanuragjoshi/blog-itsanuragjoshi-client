@@ -60,21 +60,21 @@ const About = () => {
             </p>
             <div className={styles.links}>
               <a
-                href="https://medium.com/@anuragjoshi"
+                href="https://medium.com/@itsanuragjoshi"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Medium
               </a>
               <a
-                href="https://linkedin.com/in/anuragjoshi"
+                href="https://linkedin.com/in/itsanuragjoshi"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
               <a
-                href="https://github.com/anuragjoshi"
+                href="https://github.com/itsanuragjoshi"
                 target="_blank"
                 rel="noopener noreferrer"
               >

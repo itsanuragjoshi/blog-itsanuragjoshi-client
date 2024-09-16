@@ -48,11 +48,10 @@ const Home = () => {
 
               <div className={styles.heroContentWrapper}>
                 {/* Author greeting and introduction */}
-                <h3>hey there!</h3>
+                <h3>Welcome to my blog!</h3>
                 <p>
-                  Welcome to my blog. I'm Anurag Joshi, a Digital marketer turned
-                  aspiring front-end engineer, on a coding journey with a passion
-                  for JavaScript and ReactJS
+                  I'm Anurag Joshi, a Front-End Developer sharing coding
+                  concepts, tips, and more with the community ❤️
                 </p>
               </div>
             </div>
@@ -86,7 +85,9 @@ const Home = () => {
           <div className={styles.loadMore}>
             {totalPostCount > 0 ? (
               visiblePostCount < totalPostCount ? (
-                <button onClick={handleOnLoadMore}>See More Posts &rarr;</button>
+                <button onClick={handleOnLoadMore}>
+                  See More Posts &rarr;
+                </button>
               ) : (
                 <div>Sorry, that's all folks! No more to load.</div>
               )

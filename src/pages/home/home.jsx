@@ -1,5 +1,6 @@
 // Import styles
 import styles from "./home.module.css";
+import { useNavigate } from "react-router-dom";
 
 // Import hooks
 import useFetchPosts from "post/hooks/useFetchPosts";
@@ -14,6 +15,7 @@ import MetaTags from "common/components/metaTags/MetaTags";
 // Define Home component
 const Home = () => {
   const apiUrl = `${process.env.REACT_APP_API_URI_POSTS}?`;
+  const navigate = useNavigate();
 
   // Destructure useFetchPosts hook
   const {
@@ -35,24 +37,26 @@ const Home = () => {
         <div className={styles.heroSection}>
           <div className="container">
             <div className={styles.heroHeader}>
-              {/* Title for hero section */}
               <h1>Words that could not make it to my code</h1>
             </div>
 
-            {/* Author information in hero section */}
             <div className={styles.heroAuthorBlock}>
               <div className={styles.heroImageWrapper}>
-                {/* Author image */}
                 <img src={SuperAdmin} alt="This is Anurag Joshi" />
               </div>
 
               <div className={styles.heroContentWrapper}>
-                {/* Author greeting and introduction */}
                 <h3>Welcome to my blog!</h3>
                 <p>
                   I'm Anurag Joshi, a Front-End Developer sharing coding
                   concepts, tips, and more with the community ❤️
                 </p>
+                <button
+                  onClick={() => navigate("/about")}
+                  className="button buttonPrimary"
+                >
+                  About Me
+                </button>
               </div>
             </div>
           </div>
